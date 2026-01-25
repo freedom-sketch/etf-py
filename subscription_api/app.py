@@ -7,7 +7,6 @@ from LoggerFactory import logger_factory
 logger = logger_factory.create_logger(name='web.App')
 app = FastAPI()
 
-
 @app.api_route(SubscriptionApiData.WEB_PATH+'{telegram_id}', methods=["GET", "HEAD"], response_class=PlainTextResponse)
 async def key_issuance(telegram_id: str):
     config_key = await SubscriptionApiHelper.generate_config_key(telegram_id=telegram_id)

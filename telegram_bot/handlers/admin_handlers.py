@@ -11,13 +11,13 @@ from xui.methods import XuiAPI
 from LoggerFactory import logger_factory
 from config import SubscriptionApiData
 
+
 logger = logger_factory.create_logger(name='tg.AdminHandler')
 admin_router = Router()
 
-
 @admin_router.callback_query(F.data == 'admin_panel', IsAdminFilter())
 async def main_panel(callback: types.CallbackQuery):
-    keyboard = await admin_panel_inline_keyboard()
+    keyboard = await admin_panel_inline_keyboard() #type: ignore
     await callback.message.edit_text("Панель администратора", reply_markup=keyboard.as_markup())
     await callback.answer()
 

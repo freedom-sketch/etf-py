@@ -3,7 +3,6 @@ from LoggerFactory import logger_factory
 
 logger = logger_factory.create_logger(name='utils.decorators.Login')
 
-
 def login(method):
     async def wrapper(*args, **kwargs):
         panel_url = kwargs.get('panel_url')
