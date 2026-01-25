@@ -101,7 +101,7 @@ class XuiAPI:
                     connection_string = (
                         f"vless://{telegram_id}@{server_address}:{server_port}"
                         f"?type=tcp&encryption=none&security=reality&pbk={public_key}&fp={fingerprint}&sni={website_name}"
-                        f"&sid={short_id}&spx=%2F#{tag if tag else ''}"
+                        f"&sid={short_id}&spx=%2F&flow=xtls-rprx-vision#{tag if tag else ''}"
                     )
                 else:
                     connection_string = ''
